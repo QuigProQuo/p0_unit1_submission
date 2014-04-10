@@ -19,26 +19,38 @@ end
 #
 
 # Person 2
+
 def my_array_modification_method(source, thing_to_modify)
-  # Your code here!
+  more_pets = []
+ 	 source.each do |pet|
+    	if pet.is_a? Integer
+      	pet += thing_to_modify
+      	more_pets.push pet
+    	else
+      	more_pets.push pet 
+    	end
+  	end
+  return more_pets
 end
 
 def my_hash_modification_method(source, thing_to_modify)
-  # Your code here!
+  source.each {|name, age| source[name] = age + thing_to_modify}
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
+# By using .each I am able to separately process each request for a new pet
+# I felt using an if/else structure was an effective way to represent if I succeeded at getting another pet or not. 
+# After completing both the array and hash I feel there is an easier way to do the array than the one chosen.
+# By the looks of the array and hash methods used above it may be more appealing to use the hash at this point 
+#   until my array function is simplified using another method than the if/else. 
 
 
 # Person 3
-def my_array_sorting_method(source)
+def my_array_sorting_method(source, thing_to_locate)
   # Your code here!
 end
 
-def my_hash_sorting_method(source)
+def my_hash_sorting_method(source, thing_to_locate)
   # Your code here!
 end
 
@@ -71,15 +83,15 @@ p my_array_finding_method(i_want_pets, "t") == ["want","pets","but"]
 p my_hash_finding_method(my_family_pets_ages, 3) == ["Hoobie", "Ditto"]
 p my_array_modification_method(i_want_pets, 1) == ["I", "want", 4, "pets", "but", "I", "only", "have", 3 ]
 p my_hash_modification_method(my_family_pets_ages, 2) == {"Evi" => 8, "Hoobie" => 5, "George" => 14, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
-p my_array_sorting_method(i_want_pets) == ["3", "4", "I", "but", "have", "only", "pets", "want"]
-p my_hash_sorting_method(my_family_pets_ages) == [["Annabelle", 2], ["Ditto", 5], ["Hoobie", 5], ["Bogart", 6], ["Poly", 6], ["Evi", 8], ["George", 14]] 
+p my_array_sorting_method(i_want_pets, "pets") == ["3", "4", "I", "but", "have", "only", "pets", "want"]
+p my_hash_sorting_method(my_family_pets_ages, age) == [["Annabelle", 2], ["Ditto", 5], ["Hoobie", 5], ["Bogart", 6], ["Poly", 6], ["Evi", 8], ["George", 14]] 
 # This may be false depending on how your method deals with ordering the animals with the same ages.
-p my_array_deletion_method(i_want_pets, "a") == ["I", 4, "pets", "but", "I", "only", 3 ]
-p my_hash_deletion_method(my_family_pets_ages, "George") == {"Evi" => 8, "Hoobie" => 5, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
+p my_deletion_method(i_want_pets, "a") == ["I", 4, "pets", "but", "I", "only", 3 ]
+p my_deletion_method(my_family_pets_ages, "George") == {"Evi" => 8, "Hoobie" => 5, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
 
 # Reflect!
-# 
-# 
-# 
-# 
+# This was a straight forward assignment. I enjoyed trying to solve this!
+# It really came down to how much ruby I understand to date that I'd be able to apply to the solutions
+# I look forward to seeing how other groups solved this challenge. I am definitely looking to improve the array function I used 
+# As for I feel that it is the obvious chose rather than the most effective and efficient solution.
 # 
